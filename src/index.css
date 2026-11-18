@@ -1,0 +1,94 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+html,
+body {
+  background-color: #faf8f4;
+}
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.font-serif {
+  font-family: 'Fraunces', Georgia, serif;
+  font-optical-sizing: auto;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #dbc8e3;
+  border-radius: 9999px;
+  border: 2px solid #faf8f4;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #c9b8e8;
+}
+
+/* Glass surface */
+.glass {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* Voice orb layered gradients */
+.orb-core {
+  background: radial-gradient(
+    circle at 32% 28%,
+    #f4e6a8 0%,
+    #dcd1f0 38%,
+    #9c7ab4 72%,
+    #49305d 100%
+  );
+}
+
+.orb-glow {
+  background: radial-gradient(
+    circle at 50% 50%,
+    rgba(220, 209, 240, 0.55) 0%,
+    rgba(220, 209, 240, 0) 70%
+  );
+}
+
+/* Shimmer placeholder */
+.shimmer {
+  background: linear-gradient(
+    90deg,
+    rgba(220, 209, 240, 0.15) 25%,
+    rgba(220, 209, 240, 0.4) 50%,
+    rgba(220, 209, 240, 0.15) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 2.5s linear infinite;
+}
+
+/* Smooth view transition */
+.view-enter {
+  animation: fadeIn 0.45s ease-out both;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
